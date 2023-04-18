@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <title>imT</title>
+</head>
+<style>
+    body{
+        background: linear-gradient(#3f69ff,white);
+        font-family: poppins;
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+        background-color: silver;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+    }
+    .menu{
+        display: flex;
+    }
+    .menu li a{
+        padding: 10px 25px;
+    }
+    nav .menu li a{
+        color: white;
+        text-decoration: none;
+        font-weight: 200;
+    }
+    nav .menu li{
+        list-style: none;
+        padding: 10px;
+    }
+    nav .menu li:hover{
+        background-color: rgb(59, 59, 59);
+        border-radius: 10px;
+    }
+    nav .menu .dropdown{
+        display: none;
+    }
+    nav ul li:hover .dropdown{
+        display: block;
+        background-color: silver;
+        position: absolute;
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 4px;
+    }
+    button{
+        text-decoration: none;
+    }
+    .box-container{
+        margin: 100px 100px;
+        display:flex;
+        justify-content:space-between;
+    }
+    .box-1,.box-2,.box-3{
+        width: 510px;
+        height: 640px;
+        left: 705px;
+        top: 314px;
+        background: rgba(217, 217, 217, 0.5);
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow:2px 2px 18px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        margin: 0px 4px;
+        border-radius: 20px;
+        align-items: center;
+    }
+    .box-1 h1 p{
+        position: absolute;
+        padding: 100px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .box-2 h1 p{
+        position: absolute;
+        padding: 100px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .box-3 h1 p{
+        position: absolute;
+        padding: 100px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .box-4{
+        width: 2090px;
+        height: 640px;
+        left: 560px;
+        top: 314px;
+        background: rgba(217, 217, 217, 0.5);
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow:2px 2px 18px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        margin: 10px 100px;
+        border-radius: 20px;
+    }
+    .box-4 a{
+        top: 100px;
+    }
+
+  .team-cards-inner-container{
+    display:flex;
+    row-gap:1.3rem;
+    column-gap:1.3rem;
+  }
+  .text-blk{
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+    padding-top:0px;
+    padding-right:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    line-height:50px;
+  }
+  .responsive-cell-block{
+    min-height:75px;
+  }
+  .responsive-container-block{
+    min-height:100px;
+    height:fit-content;
+    width: 100%;
+    padding-top:0px;
+    padding-right:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:0px;
+    margin-right:auto;
+    margin-bottom:0px;
+    margin-left:auto;
+    justify-content:flex-start;
+  }
+  .inner-container{
+    max-width:1200px;
+    min-height:100vh;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+    justify-content:center;
+  }
+  .section-head{
+    font-size:60px;
+    line-height:70px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:24px;
+    margin-left:0px;
+  }
+  .section-body{
+    font-size:14px;
+    line-height:18px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:64px;
+    margin-left:0px;
+  }
+  .team-cards-outer-container{
+    display:flex;
+    align-items:center;
+  }
+  .content-container{
+    display:flex;
+    justify-content:flex-start;
+    flex-direction:row;
+    align-items:center;
+    padding-top:0px;
+    padding-right:25px;
+    padding-bottom:0px;
+    padding-left:0px;
+  }
+  .img-box{
+    max-width:130px;
+    max-height:130px;
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    margin-top:0px;
+    margin-right:25px;
+    margin-bottom:0px;
+    margin-left:0px;
+  }
+  .card{
+    background-color:rgb(255, 255, 255);
+    display:flex;
+    padding-top:16px;
+    padding-right:16px;
+    padding-bottom:16px;
+    padding-left:16px;
+    box-shadow:rgba(95, 95, 95, 0.1) 6px 12px 24px;
+    flex-direction:row;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:15px;
+  }
+  .card-container {
+    max-width: 350px;
+  }
+  .card-content-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .person-name{
+    font-size:20px;
+    font-weight:700;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:5px;
+    margin-left:0px;
+  }
+  .person-info{
+    font-size:11px;
+    line-height:15px;
+  }
+  .card-container{
+    max-width:350px;
+  }
+  .outer-container{
+    justify-content:center;
+    border-radius: 60px;
+    box-shadow: 10px;
+    width: 94%;
+    height: 50%;
+    padding-top:0px;
+    padding-right:50px;
+    padding-bottom:0px;
+    padding-left:50px;
+    background : linear-gradient(rgb(177, 177, 255),white);
+  }
+  .person-img{
+    width:100%;
+    height:100%;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-right-radius:6px;
+    border-bottom-left-radius:6px;
+  }
+  @keyframes bounce{
+    0%, 20%, 50%, 80%, 100%{
+      transform:translateY(0px);
+    }
+    40%{
+      transform:translateY(-30px);
+    }
+    60%{
+      transform:translateY(-15px);
+    }
+    0%, 20%, 50%, 80%, 100%{
+      transform:translateY(0px);
+    }
+    40%{
+      transform:translateY(-30px);
+    }
+    60%{
+      transform:translateY(-15px);
+    }
+  }
+  @media (max-width: 1024px){
+    .team-card-container{
+      justify-content:center;
+    }
+    .section-head{
+      font-size:50px;
+      line-height:55px;
+    }
+    .img-box{
+      max-width:109px;
+      max-height:109px;
+    }
+    .content-container{
+      padding-top:0px;
+      padding-right:20px;
+      padding-bottom:0px;
+      padding-left:0px;
+    }
+    .inner-container{
+      justify-content:space-evenly;
+    }
+  }
+  @media (max-width: 768px){
+    .inner-container{
+      margin-top:60px;
+      margin-right:0px;
+      margin-bottom:60px;
+      margin-left:0px;
+    }
+    .section-body{
+      margin-top:0px;
+      margin-right:0px;
+      margin-bottom:0px;
+      margin-left:0px;
+    }
+    .img-box{
+      margin-top:0px;
+      margin-right:30px;
+      margin-bottom:0px;
+      margin-left:0px;
+    }
+    .content-box{
+      text-align:center;
+    }
+    .content-container{
+      margin-top:0px;
+      margin-right:0px;
+      margin-bottom:30px;
+      margin-left:0px;
+    }
+  }
+  @media (max-width: 500px){
+    .outer-container{
+      padding-top:0px;
+      padding-right:60px;
+      padding-bottom:0px;
+      padding-left:60px;
+    }
+    .section-head{
+      font-size:40px;
+      line-height:45px;
+    }
+    .content-box{
+      padding-top:0px;
+      padding-right:0px;
+      padding-bottom:0px;
+      padding-left:0px;
+    }
+    .section-body{
+      font-size:12px;
+    }
+    .img-box{
+      max-width:68px;
+      max-height:68px;
+    }
+    .person-name{
+      font-size:14px;
+      margin-top:0px;
+      margin-right:0px;
+      margin-bottom:1px;
+      margin-left:0px;
+    }
+    .content-box{
+      margin-top:0px;
+      margin-right:0px;
+      margin-bottom:46px;
+      margin-left:0px;
+      text-align:left;
+    }
+    .content-container{
+      margin-top:0px;
+      margin-right:0px;
+      margin-bottom:0px;
+      margin-left:0px;
+    }
+  } 
+  :root{
+    --black: #000000;
+    --light-red: #dd4545;
+  }
+  .footer-container{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding: 7rem 0 5rem 0;
+  }
+
+  .footer-logo{
+    width: 18vw;
+    margin-left: 7rem;
+  }
+  .footer-logo h2{
+    font-size: 2.7rem;
+  }
+  .footer-logo p{
+    font-size: 1.4rem;
+    color: #6e6b6b;
+    padding: 1.5rem 0rem;
+    line-height: 2.1rem;
+  }
+  .footer-logo a{
+    text-decoration: none;
+  }
+  .fa{
+    background-color: var(--black);
+    color: #ffffff;
+    padding: .6rem;
+    border-radius: .3rem;
+  }
+  .icons{
+    margin: 0rem 1.5rem;
+  }
+  .footer-links{
+    width: 32vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+  }
+  .footer-links ul a li{
+    list-style-type: none;
+    padding: 1rem 0rem;
+  }
+  .footer-links ul a{
+    text-decoration: none;
+    color: #6e6b6b;
+  }	
+  .footer-contactus{
+    width: 17vw;
+  }
+  .footer-contactus h2{
+    font-size: 1.9rem;
+  }
+  .footer-contactus button{
+    padding: 1.4rem 2rem;
+      font-size: 1.6rem;
+      background: var(--light-red);
+      border: none;
+      border-radius: .4rem;
+      color: #ffff;
+      margin-top: 1.6rem;
+      cursor: pointer;
+  }
+  .copywright-tag{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  @media(max-width: 800px){
+    footer{margin: 50px;padding: 10px;box-sizing: border-box;font-family: 'poppins', sans-serif; font-weight: 500;}
+    .footer-container{
+      /* flex-direction: column; */
+      margin-right: 100%;
+      align-items: center;
+    }
+    .footer-logo{
+      width: 32vw;
+      margin-bottom: 3rem;
+      margin-left: 0rem;
+    }
+    .footer-links{
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-links h3{
+      font-size: 2.4rem;
+      margin: 1rem 0px;
+    }
+    .footer-contactus{
+      width: 50px;
+      margin-top: 2.4rem;
+      text-align: center;
+    }
+    .footer-contactus h2{
+      font-size: 2.5rem;
+    }
+  }
+</style>
+<body>
+    <nav>
+        <a href="projectakhir.html"><img src="imT Logo.png" width="75" alt=""></a>
+        <ul class="menu">
+            <li><a href="">Program</a>
+            <ul class="dropdown">
+                <li><a href="materi.html">Materi</a></li>
+                <li><a href="diskusi2.html">Diskusi</a></li>
+            </ul>
+            </li>
+            <li><a href="">Event</a>
+            <ul class="dropdown">
+                <li><a href="workshop.html">Wrokshop</a></li>
+                <li><a href="webinar.html">Webinar</a></li>
+            </ul>
+            </li>
+            <li><a href="">Layanan</a>
+            <ul class="dropdown">
+                <li><a href="etika.html">Prosedur</a></li>
+                <li><a href="etika.html">Etika</a></li>
+                <li><a href="penilaian.html">Penilaian</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            </li>
+            <div>
+                <a href="loginpage.html" class="btn px-4 text-light bg-primary fw-bold">Masuk</a>
+        </ul>
+    </nav>
+    <!-- isi -->
+    <div class="box-container">
+        <!--- 1 --->
+            <div class="box-1">
+                <h1>MATERI</h1>
+                <p>Pada materi terdapat banyak materi - materi yang diunggah oleh sekolah - sekolah lain...</p>
+                <a href="materi.html" class="btn px-4 text-light bg-primary fw-bold">Lihat Detail</a>
+                <img src="Materi Logo.png" width="500px" alt="">
+            </div>
+        <!--- 2 --->
+            <div class="box-2">
+                <h1>DISKUSI</h1>
+                <p>Pada diskusi kita bisa berdiskusi atau sharing  dengan guru - guru hebat yang berada di seluruh Indonesia...</p>
+                <a href="diskusi2.html" class="btn px-4 text-light bg-primary fw-bold">Lihat Detail</a> <br>
+                <img src="Discusi logo.png" width="600px" alt="">
+            </div>
+        <!--- 3 --->
+            <div class="box-3">
+                <h1>WORKSHOP</h1>
+                <p>Pada workshop ini kita bisa mendapatkan tambahan - tambahan ilmu tentang mengajar peserta didik yang baik setiap 1 bulan sekali...</p>
+                <a href="workshop.html" class="btn px-4 text-light bg-primary fw-bold">Lihat Detail</a>
+                <img src="Wokshop logo.png" width="500px" alt="">
+            </div>
+        </div>
+        
+        <div class="box-4 ">
+                <div class="d-flex">
+                <div class="align-self-center px-5">
+                    <h1>MATERI</h1>
+                    <h4>Berbagi bukan tentang seberapa besar dan seberapa berharganya hal yang kau beri, <br> namun seberapa tulus dan ikhlasnya apa yang ingin kau beri. 
+                        mari saling berbagi untuk pemerataan materi </h4>
+                </div>
+                <div>
+                    <img src="Materi Logo.png" alt="" align="right" width="450px">
+                </div>
+            </div>
+            <div>
+                <a href="materi.html" class="btn px-4 text-light bg-primary fw-bold">lihat materi</a>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="box-4 ">
+            <div class="d-flex">
+            <div class="align-self-center px-5">
+                <h1>DISKUSI</h1>
+                <h4>ilmu tidak akan bertambah tanpa adanya pengalaman dari seorang guru baru melalui <br>  
+                    sebuah wadah yang melahirkan menjadi ilmu- ilmu baru mari bersama wujudkan workshop sebagai pemersatu dan penambah pengalaman ilmu baru </h4>
+            </div>
+            <div>
+                <img src="Discusi logo.png" alt="" align="right" width="705px">
+            </div>
+        </div>
+        <div>
+            <a href="diskusi2.html" class="btn px-5 text-light bg-primary fw-bold">mari berdiskusi</a>
+        </div>
+    </div>
+
+    
+    <br>
+    <br>
+
+    <div class="box-4 ">
+        <div class="d-flex">
+        <div class="align-self-center px-5">
+            <h1>Workshop</h1>
+            <h4>Workshop adalah sebuah pertemuan yang mana sekelompok orang dengan minat, keahlian, atau profesi pada bidang tertentu secara aktif terlibat dalam diskusi dan penelitian intensif tentang topik atau proyek tertentu.</h4>
+        </div>
+        <div>
+            <img src="Wokshop logo.png" alt="" align="right" width="600px">
+        </div>
+    </div>
+    <div>
+        <a href="workshop.html" class="btn px-5 text-light bg-primary fw-bold">Lihat</a>
+    </div>
+</div>
+
+<div class="responsive-container-block outer-container mb-5 mt-5">
+    <div class="responsive-container-block inner-container">
+      <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-4 wk-ipadp-5 content-container">
+        <div class="content-box">
+          <p class="text-blk section-head" style="text-align: center;">OUR TEAM</p>
+          <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-8 team-cards-outer-container">
+            <div class="responsive-container-block team-cards-inner-container">
+              <div class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 card-container">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="Mardi.jpg" class="person-img" />
+                  </div>
+                  <div class="card-content-box">
+                    <p class="text-blk person-name">Ahmad Mardiyanto</p>
+                    <p class="text-blk person-info">215150600111019</p>
+                  </div>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 card-container">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="fotoprofil.jpg"class="person-img" />
+                  </div>
+                  <div class="card-content-box">
+                    <p class="text-blk person-name">Martvelino Tri W</p>
+                    <p class="text-blk person-info">215150607111006</p>
+                  </div>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 card-container">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="adzin.jpg" class="person-img" />
+                  </div>
+                  <div class="card-content-box">
+                    <p class="text-blk person-name">Muhammad Adzinul H</p>
+                    <p class="text-blk person-info">2151506011110017</p>
+                  </div>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 card-container">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="Ajeng.jpg" class="person-img" />
+                  </div>
+                  <div class="card-content-box">
+                    <p class="text-blk person-name">Ajeng Ayu Kusuma W</p>
+                    <p class="text-blk person-info">215150600111011</p>
+                  </div>
+                </div>
+              </div>
+              <div class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 card-container">
+                <div class="card">
+                  <div class="img-box">
+                    <img src="Nimah.jpg" class="person-img" />
+                  </div>
+                  <div class="card-content-box">
+                    <p class="text-blk person-name">Ni'mah Magfiroh</p>
+                    <p class="text-blk person-info">215150600111017</p>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+        <footer>
+          <div class="footer-container">
+            <div class="footer-logo">
+              <a href="#"><img class="mb-5"src="imT Logo.png" alt="" width="100px"></a>
+              <h2>iMT</h2>
+              <p>imT adalah Platform Online Learning Bersertifikat untuk Guru. Bangun keterampilan mengajar dengan kursus, webinar, dan sertifikat.</p>
+            </div>
+            <div class="footer-links">
+              <div class="platform">
+                <h3>Platform</h3>
+                <ul>
+                  <a href="#"><li>How it Works</li></a>
+                  <a href="#"><li>Fraud</li></a>
+                  <a href="#"><li>Protection</li></a>
+                  <a href="loginpage.html"><li>Accounts</li></a>
+                </ul>
+              </div>
+              <div class="learning">
+                <h3>Learn</h3>
+                <ul>
+                  <a href="#"><li>Resources</li></a>
+                  <a href="#"><li>Blog</li></a>
+                  <a href="#"><li>FAQs</li></a>
+                </ul>
+              </div>
+              <div class="About">
+                <h3>About</h3>
+                <ul>
+                  <a href="#"><li>Team</li></a>
+                  <a href="#"><li>Partners</li></a>
+                  <a href="#"><li>Contact Us</li></a>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-contactus">
+              <h2>Contact US</h2>
+              <button>Get in touch</button>
+            </div>
+          </div>
+          <div class="copywright-tag">&copyCopyright My Academy. All rights reserved</div>
+        </footer>
+
+</body>
+</html>
