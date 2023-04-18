@@ -1,4 +1,4 @@
 # tugasgitmartvelino
 | NAMA |  KELAS
 |--|--|
-| Ni'mah Magfiroh  |  PTI-B
+| Martvelino Tri Wijanarko  |  PTI-B
