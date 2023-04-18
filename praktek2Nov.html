@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pilihKota() {
+        var objfrm = document.getElementById("frm1");
+        var idx_opsi = objfrm.idkota.selectedIndex;
+        alert('idx ' + idx_opsi);
+        objfrm.kota.value = objfrm.idkota.options[idx_opsi].text;
+        }
+        </script>
+</head>
+<body>
+    <!-- <script> 
+        if (kondisi1) {
+            kode yang dijalankan jika kondisi1 benar
+        }else if (kondisi2) {
+            kode yang dijalankan jika kondisi2 benar
+        } else {
+            kode jika salah satu kondisi tidak ada yang benar
+        }
+    </script> -->
+    <!-- <script> 
+        var i = 1;
+        while (i <= 5) {
+        document.write("Nomor : " + i + " < br /> ");
+        i++;
+        }
+    </script>-->
+    <!-- <script> 
+        function tes() {
+        document.write("Hello World!");
+        }
+        tes();
+    </script> -->
+    <!-- <script> 
+        function tambahkan(x, y) {
+        z = x + y;
+        alert("Hasil tambah " + x + " + " + y + " = " + z);
+        }
+        tambahkan(5, 3);
+    </script>-->
+    <!-- <form> 
+        <input type="text" name="myName" id="myID">
+    </form> -->
+    <!-- <script> 
+        // menggunakan id numerik (urutan elemen)
+        // document.forms[0].elements[0];
+
+        // menggunakan nama elemen
+        //document.forms[0].elements['myName'];
+
+        // menggunakan id elemen
+        //document.forms[0].elements['myID'];
+
+        // menggunakan nama dan id secara langsung
+        //document.forms[0].myName;
+        //document.forms[0].myID;
+
+        // menggunakan method getElementById (gae iki luweh penak)
+        //document.getElementById('myName');
+    </script> -->
+    <!-- <a href="http://www.google.com" onclick="alert('hello')">google</a> -->
+
+    <!-- <form name="go"> 
+        <input type="button" name="C1" onclick="document.bgColor='red'">
+        <input type="button" name="C1" onclick="document.bgColor='blue'">
+        <input type="button" name="C1" onclick="document.bgColor='green'">
+    </form>-->
+
+    <!-- <button onclick="document.bgColor='red'">Jadi Merah</button> 
+    <button onclick="document.bgColor='white'">Default</button>
+    <button onclick="document.bgColor='blue'">Jadi Biru</button> -->
+    <form method="POST" action="#" id="frm1">
+        Kota : <select name="idkota" onClick="pilihKota()">
+                <option value="JK">Jakarta</option>
+                <option value="BG">Bogor</option>
+                <option value="BD">Bandung</option>
+                <option value="SB">Surabaya</option>
+                <option value="KB">Kebumen</option>
+                </select>
+                <br>
+        Kota Pilihan : <input type="text" name="kota" value="" size="20" />
+    
+    </form>
+
+
+</body>
+</html>
